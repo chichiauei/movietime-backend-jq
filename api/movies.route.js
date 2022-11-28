@@ -15,11 +15,18 @@ router
     .post(ReviewsController.apiPostReview)
     .put(ReviewsController.apiUpdateReview)
     .delete(ReviewsController.apiDeleteReview);
-router
-    .route("/favorites")
-    .put(FavoritesController.apiUpdateFavorites);
 
-router
-    .route("/favorites/:userId")
-    .get(FavoritesController.apiGetFavorites);
-export default router;
+
+
+router.route("/favorites").put(FavoritesController.apiUpdateFavorites);
+router.route("/favorites/:userId").get(FavoritesController.apiGetFavorites);
+router.route("/favoriteMovies/:userId").get(FavoritesController.apiGetMovies);
+
+
+
+    export default router;
+
+
+
+
+
